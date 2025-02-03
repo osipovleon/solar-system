@@ -1,0 +1,11 @@
+name: Call Reusable Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-reusable:
+    uses: osipovleon/github-build-templates/.github/workflows/reusible_template.yml@feature/first-action
+    with:
+      GIT_REPO_NAME: ${{ github.repository }}
+      GIT_REPO_BRANCH: ${{ github.ref_name }}
